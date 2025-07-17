@@ -1,25 +1,17 @@
-<!DOCTYPE html>https://github.com/MehmetSaritas/MehmetSaritas.github.io/blob/main/index.html
+<!DOCTYPE html>
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mehmet Sarıtaş - Portfolyo</title>
   <style>
-    .profil-foto {
-      width: 90px;
-      height: 90px;
-      object-fit: cover;
-      border-radius: 50%;
+    :root {
+      --primary-color: #170b60;
+      --highlight-color: #007acc;
     }
 
-    .logo {
-      position: absolute;
-      top: 10px;
-      left: 10px;
-      width: 300px;
-      height: 300px;
-      object-fit: contain;
-      z-index: 999;
+    * {
+      box-sizing: border-box;
     }
 
     body {
@@ -31,22 +23,47 @@
     }
 
     header {
-  background: linear-gradient(to right, #170b60, #170b60);
-  color: white;
-  padding: 2rem;
-  text-align: center;
-}
+      background: linear-gradient(to right, var(--primary-color), var(--primary-color));
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    .header-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .logo {
+      width: 60px;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .profil-foto {
+      width: 90px;
+      height: 90px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    .header-container .text {
+      text-align: center;
+    }
 
     section {
-      padding: 2rem;
+      padding: 1.5rem;
       max-width: 900px;
       margin: auto;
     }
 
     h2 {
-      color: #007acc;
-      border-bottom: 2px solid #007acc;
+      color: var(--highlight-color);
+      border-bottom: 2px solid var(--highlight-color);
       padding-bottom: 0.5rem;
+      font-size: 1.4rem;
     }
 
     ul {
@@ -64,6 +81,7 @@
       padding: 0.4rem 0.8rem;
       border-radius: 5px;
       margin: 0.3rem;
+      font-size: 0.9rem;
     }
 
     footer {
@@ -73,17 +91,47 @@
       color: #333;
       font-size: 0.9rem;
     }
+
+    /* Responsive Ayarlar */
+    @media (min-width: 600px) {
+      .header-container {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        text-align: left;
+      }
+
+      .logo {
+        width: 80px;
+        margin-right: 1rem;
+      }
+
+      .profil-foto {
+        margin-right: 1rem;
+      }
+
+      .header-container .text {
+        max-width: 500px;
+        text-align: left;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .skills span {
+        display: block;
+        margin: 0.5rem auto;
+        text-align: center;
+      }
+    }
   </style>
 </head>
 <body>
 
-  <!-- LOGO (sol üstte sabit) -->
-  <img src="logo.png" alt="Logo" class="logo">
-
   <header>
     <div class="header-container">
+      <img src="logo.png" alt="Logo" class="logo">
       <img src="profil.jpg" alt="Profil Fotoğrafı" class="profil-foto">
-      <div>
+      <div class="text">
         <h1>Mehmet Sarıtaş</h1>
         <p>Bilişim Sistemleri Mühendis Adayı | Web Geliştirici</p>
         <p><a href="mailto:mhmtsrts.49@gmail.com" style="color: #fff;">mhmtsrts.49@gmail.com</a> | 0538 571 01 14</p>
@@ -137,3 +185,4 @@
 
 </body>
 </html>
+
